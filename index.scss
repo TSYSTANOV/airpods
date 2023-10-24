@@ -28,6 +28,18 @@ font-style: normal;
 font-weight: 500;
 line-height: 120%;
 }
+.content-item 
+{display: none;}
+.content-item--aсtive
+{display: block;}
+.composition__img
+{display: none;}
+.composition__img--active
+{display: block}
+.battery__img
+{display: none;}
+.battery__img--active
+{display: inline-block;}
 .container
 {
     padding:0 10px;
@@ -151,6 +163,10 @@ transition: 0.3s;}
 {
     background-color: #fcfcfc;
     box-shadow: 0 0 15px 1px grey;
+}
+.choose-color__btn--active
+{
+    display: none;
 }
 /*Composition*/
 .composition__title
