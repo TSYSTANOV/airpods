@@ -10,7 +10,11 @@ html {
   margin: 0;
   padding: 0;
 }
-
+img
+{
+  max-width: 100%;
+  height: auto;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -40,11 +44,6 @@ body {
 .content-item {
   display: none;
 }
-
-.content-item--aсtive {
-  display: block;
-}
-
 .composition__img {
   display: none;
 }
@@ -55,6 +54,7 @@ body {
 
 .battery__img {
   display: none;
+  margin: 0 auto;
 }
 
 .battery__img--active {
@@ -198,6 +198,13 @@ body {
   border-radius: 20px;
   border: 2px solid grey;
   transition: 0.3s;
+  position: relative;
+  z-index: 100;
+}
+.choose-color__btn > img
+{
+  position: relative;
+  z-index: -1;
 }
 
 .choose-color__btn:hover {
@@ -353,7 +360,9 @@ body {
   max-width: 900px;
   margin: 0 auto;
 }
-
+.content-item--aсtive {
+  display: block;
+}
 @media screen and (max-width: 1250px) {
   .header {
     margin-bottom: 0;
