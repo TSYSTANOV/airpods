@@ -214,6 +214,7 @@ body {
 
 .choose-color__btn--active {
   display: none;
+  opacity: 0;
 }
 
 /*Composition*/
@@ -488,6 +489,8 @@ body {
     bottom: 100px;
   }
   .choose-color__btn {
+    opacity: 1;
+    transition: 1s;
     padding: 40px;
   }
   .audio::before {

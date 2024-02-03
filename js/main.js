@@ -10,25 +10,40 @@ btns.forEach((el)=>
     el.addEventListener('click',()=>
     {
         addAndRemoveClasses(activeID,false)
-        
-        document.querySelector(`[data-button='${activeID}']`).classList.remove('choose-color__btn--active')
+
+        visibleBlock(activeID)
         activeID = event.target.dataset.button
-        document.querySelector(`[data-button='${activeID}']`).classList.add('choose-color__btn--active')
-
+        document.querySelector(`[data-button='${activeID}']`).style.opacity = '0'
+        setTimeout(()=>
+        {
+            document.querySelector(`[data-button='${activeID}']`).classList.add('choose-color__btn--active')
+        },500)
         addAndRemoveClasses(activeID,true)
-
-
     })
 })
 
-function addAndRemoveClasses(param,boolean)
+function visibleBlock(id)
+{
+    setTimeout(()=>
+    {
+    document.querySelector(`[data-button='${id}']`).style.opacity = '0'
+    document.querySelector(`[data-button='${id}']`).classList.remove('choose-color__btn--active')
+    },500)
+    setTimeout(()=>
+    {
+    document.querySelector(`[data-button='${id}']`).style.opacity = '1'
+    },1000)
+}
+
+
+function addAndRemoveClasses(param, boolean)
 {
     let a = document.querySelectorAll(`.${param}`)
         a.forEach((el)=>
         {
             if(boolean)
             {
-        el.classList.add('content-item--aсtive')
+                el.classList.add('content-item--aсtive')
             }
             else{
                 el.classList.remove('content-item--aсtive')               
